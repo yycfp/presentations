@@ -8,9 +8,10 @@ Functional programming can be daunting, but remember that it isn’t only for Ph
         * Thank everyone for coming
         * What does the community want?
     * What is FP?
+        * Based on a simple premise with far-reaching implications: we construct our programs using only pure functions—in other words, functions that have no side effects. Think "a series of transformations".
         * immutable & stateless (reasoning)
         * higher-order function (reusability)
-        * ADT (correctness)
+        * ADT (compiler, correctness)
         * laziness (generators, think infinite list of primes)
             *  The Internet is inherently lazy. Imagine that when you visit a page on a server, it had to generate all the pages that you can possibly view.
     * Why FP?
