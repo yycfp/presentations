@@ -174,23 +174,74 @@
         </section>
 		  </section>
 
-			<section>
+			<section data-background="#2B0047">
+
         <section>
           <h2>High-Order Functions</h2>
           <p>
-            Andy's stuff.
+            A function that has a value with a function type as an input parameter or return value.
           </p>
         </section>
 
-				<section>
-	        <pre><code data-trim>
-	(def lazy-fib
-	  (concat
-	   [0 1]
-	   ((fn rfib [a b]
-	        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
-	        </code></pre>
- 	      </section>
+        <section>
+          <h2>You've Used It</h2>
+          Using the two functions we've defined on a List
+          <pre><code data-trim>
+def map[B](f: A => B): List[B]
+def filter(f: A => Boolean): List[A]
+          </code></pre>
+          We've probably all written something like this
+          <pre><code data-trim>
+xs.filter(i => i > 5).map(i => i * 2)
+          </code></pre>
+          Which is the same as
+          <pre><code data-trim>
+xs.filter(_ > 5).map(_ * 2)
+          </code></pre>
+          Which is the same as
+          <pre><code data-trim>
+def double(i: Int) = i * 2
+xs.filter(_ > 5).map(double)
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Better Abstraction</h2>
+          <pre><code data-trim>
+def safeStringOp(s: String, f: String => String) = {
+  if (s != null) f(s) else s
+}
+
+def reverser(s: String) = s.reverse
+def capitalizer(s: String) = s.capitalize
+          </code></pre>
+          Now I can reuse both methods in a safe way
+          <pre><code data-trim>
+safeStringOp(null, reverser) // null
+safeStringOp("money", capitalizer) // Money
+safeStringOp("money", reverser) // yenom
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Defining Control Structures</h2>
+          <pre><code data-trim>
+def using[A <: { def close(): Unit }, B](param: A)(f: A => B): B =
+  try {
+    f(param)
+  } finally {
+    param.close()
+  }
+}
+          </code></pre>
+          <pre><code data-trim>
+using(Database.getConnection) { conn =>
+  DaoFactory(conn).save(data)
+}
+          </code></pre>
+          Connection has a close() method so it's legal to use here.
+        </section>
+
 		  </section>
 
       <section>
