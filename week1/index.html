@@ -237,14 +237,13 @@ if (p != null) {
       <section>
         <h2>Laziness</h2>
         <ul>
-          <li>composability
-            <pre>
-              <code data-trim contenteditable>
-                take 100 (filter even [1..])
-              </code>
-            </pre>
-          </li>
-          <li>control-flow structures: in non-lazy languages, need macros. i.e. 'if' is inherently lazily evaluated</li>
+          <li>Haskell is special, lazy by default</li>
+          <li><a href="https://www.youtube.com/watch?v=vos_D8bdoUE">Erik Meijer intro to lazy</a>
+          <li>infinite lists, generators (fibonacci)</li>
+          <li>control structures</li>
+          <li>related: currying</li>
+          <li>hidden efficiency?</li>
+          <li>lazy by default = declarative by default (FRP)</li>
           <li>drawback: non-local speed and space analysis</li>
         </ul>
       </section>
