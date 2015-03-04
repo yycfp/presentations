@@ -45,7 +45,7 @@
         <h3>What is Functional Programming & Why Does It Matter?</h3>
       </section>
 
-      <section>
+      <section data-background="#2B3E63">
         <section>
           <h2>Andy Czerwonka</h2>
           <h2>Adam Wall</h2>
@@ -62,14 +62,15 @@
         <section>
           <h2>Who's With Us?</h2>
           <ul>
-            <li>LinkedIn, Twitter, Gilt, Ticketfly, Foursquare</li>
-            <li>AT&T, Bank of America, Jane Street, Intel, NVIDIA</li>
-            <li>add more here</li>
+            <li>Meetup.com, LinkedIn, Twitter, Gilt, Ticketfly, Foursquare</li>
+            <li>AT&T, Bank of America, Jane Street, Intel, NVIDIA, IGN</li>
+            <li>SAP, Xerox, Novell, Sony, Siemens, Netflix, Tumblr, eBay</li>
+						<li>Facebook, Bloomberg, Citrix, Walmart, Coursera, White Pages, The Huffington Post</li>
           </ul>
         </section>
 
         <section>
-          <h2>Why the Resurgence?</h2>
+          <h2>Why Are They With Us?</h2>
           <ul>
             <li>Amdahl's Law</li>
             <li>Brevity</li>
@@ -78,7 +79,7 @@
         </section>
       </section>
 
-      <section>
+      <section data-background="#004200">
         <section>
           <h2>What is functional programming?</h2>
           <p>
@@ -150,19 +151,33 @@
 
       </section>
 
-      <section>
-        <h2>Immutabilty</h2>
-        <p>
-          Andy's stuff.
-        </p>
-      </section>
+			<section data-background="#400000">
+        <section>
+          <h2>Immutabilty</h2>
+          <p>
+            Andy's stuff.
+          </p>
+        </section>
+		  </section>
 
-      <section>
-        <h2>Higher-Order Functions</h2>
-        <p>
-          Andy's stuff.
-        </p>
-      </section>
+			<section>
+        <section>
+          <h2>High-Order Functions</h2>
+          <p>
+            Andy's stuff.
+          </p>
+        </section>
+
+				<section>
+	        <pre><code data-trim>
+	(def lazy-fib
+	  (concat
+	   [0 1]
+	   ((fn rfib [a b]
+	        (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+	        </code></pre>
+ 	      </section>
+		  </section>
 
       <section>
         <section>
@@ -204,7 +219,12 @@
             <li>better refactoring</li>
             <pre>
               <code data-trim contenteditable>
-                Person p = findPerson(name); if (p != null) { deductTaxes(p); } else { notifyHrNonExistant(name); }
+                Person p = findPerson(name);
+								if (p != null) {
+									deductTaxes(p);
+								} else {
+									notifyHrNonExistant(name);
+								}
               </code>
             </pre>
             vs
