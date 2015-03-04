@@ -166,12 +166,51 @@
       </section>
 
 			<section data-background="#400000">
+
         <section>
           <h2>Immutabilty</h2>
           <p>
             Andy's stuff.
           </p>
         </section>
+
+        <section>
+          <h2>Persistent Data Structures</h2>
+          <p>
+            Immutable data structures facilitate sharing data amongst otherwise isolated tasks in an efficient zero-copy manner. No synchronization necessary. This is the real payoff.
+          </p>
+          <ul>
+            <li>Fat Node</li>
+            <li>Path Copying</li>
+            <li>etc</li>
+          </ul>
+          <p>
+            Don't be scared of using them.
+          </p>
+        </section>
+
+        <section>
+          <h2>Immutable Looping</h2>
+          <img src="https://s3.amazonaws.com/media-p.slid.es/uploads/rajeevbharshetty/images/490584/download__1_.jpg">
+        </section>
+
+        <section>
+          <h2>Immutable Looping</h2>
+          <pre><code data-trim>
+def reverse(s: String): String = { // (1)
+  if (s == null) return null       // (2)
+  if (s.tail.isEmpty) return s     // (3)
+  reverse(s.tail) + s.head         // (4)
+}
+          </code></pre>
+          <ol>
+            <li>String => String</li>
+            <li>Error case -> null is starting value</li>
+            <li>Base case -> no more characters</li>
+            <li>Recursion case -> everything else</li>
+          </ol>
+        </section>
+
 		  </section>
 
 			<section data-background="#2B0047">
