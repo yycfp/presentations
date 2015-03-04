@@ -185,7 +185,7 @@
 
         <section>
           <h2>You've Used It</h2>
-          Using the two functions we've defined on a List
+          Given the following function definitions
           <pre><code data-trim>
 def map[B](f: A => B): List[B]
 def filter(f: A => Boolean): List[A]
@@ -217,9 +217,9 @@ def capitalizer(s: String) = s.capitalize
           </code></pre>
           Now I can reuse both methods in a safe way
           <pre><code data-trim>
-safeStringOp(null, reverser) // null
 safeStringOp("money", capitalizer) // Money
 safeStringOp("money", reverser) // yenom
+safeStringOp(null, reverser) // null
           </code></pre>
         </section>
 
