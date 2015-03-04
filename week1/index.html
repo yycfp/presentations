@@ -195,17 +195,9 @@
             <li>sums vs products</li>
             <li>most languages have product types, but not sum types</li>
             <p>A struct in C is a product type:
-              <pre>
-                <code data-trim contenteditable>
-                  struct Point { int x; int y; };
-                </code>
-              </pre>
+              <pre><code data-trim>struct Point { int x; int y; };</code></pre>
               Maybe (Haskell) is a sum type:
-              <pre>
-                <code data-trim contenteditable>
-                  data Maybe a = Nothing | Just a
-                </code>
-              </pre>
+              <pre><code data-trim>data Maybe a = Nothing | Just a</code></pre>
         </section>
 
         <section>
@@ -217,22 +209,16 @@
             </li>
             <li>eliminate entire classes of errors</li>
             <li>better refactoring</li>
-            <pre>
-              <code data-trim contenteditable>
-                Person p = findPerson(name);
-								if (p != null) {
-									deductTaxes(p);
-								} else {
-									notifyHrNonExistant(name);
-								}
-              </code>
-            </pre>
+            <pre><code data-trim>Person p = findPerson(name);
+if (p != null) {
+    deductTaxes(p);
+} else {
+    notifyHrNonExistant(name);
+}</code></pre>
             vs
-            <pre>
-              <code data-trim contenteditable>
-                case findPerson name of Just p -> deductTaxes p Nothing -> notifyHrNonExistant name
-              </code>
-            </pre>
+            <pre><code data-trim>case findPerson name of 
+  Just p  -> deductTaxes p 
+  Nothing -> notifyHrNonExistant name</code></pre>
             <li>Jane Street: <a href="https://www.youtube.com/watch?v=DM2hEBwEWPc">Effective ML</a>
             </li>
           </ul>
