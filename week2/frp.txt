@@ -1,0 +1,244 @@
+
+
+
+
+
+
+
+
+
+About this talk
+-- Basics of FRP from the ground up
+-- NOT Rx
+-- All code is in Haskell
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The point of this talk
+-- Not to learn any particular library
+-- To understand the basic concepts of FRP
+-- To see a new way of programming event-driven systems
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Definition of FRP
+-- Umbrella term for functional approaches 
+   for reactive systems
+---- reactive = events
+-- Fran: (F)unctional (R)eaction (AN)imations
+-- Original: Continuous Time
+-- These Days: More General
+---- No explcit state, state is computed as a 
+     function of time and events
+---- Programs describe relationships between events and effects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Haskell FRP libraries
+-- Fran
+-- Yampa
+-- ReactiveBanana
+-- sodium
+-- my own? (Hui)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fran
+-- (F)unctional (R)eactive (AN)imations
+-- no longer updated, but good for introduction
+-- ideas can be extended beyond animations to games, GUI libs
+*** show examples ***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HUI
+-- (H)askell (U)ser (I)nterface
+-- super simple, good for demonstration
+**** show your code here, Auto, Arrow, HUI Lib Proper, Demo App
+---- entire program is an Auto of Input to Rendering Primitives
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Yampa
+-- Arrowized FRP, one master event stream w/ 'reactimate'
+-- not specialized to gfx
+---- 3d games, music synth library
+-- SF similar to Auto, but more elaborate
+---- time as a value instead of just a sequence of events
+------ can integrate over time
+---- can 'switch' out event streams
+------ if a tree falls in the forest...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sodium/ReactiveBanana
+-- instead of reactimate, can merge many event streams (from IO)
+-- event streams can come from different threads!
+-- seperate Event vs. Behaviour
+-- No Arrow, instead Functor(Event) + Applicative(Behaviour)
+-- Has a Scala, Java and C# implementation
+-- why I don't like reactive-banana+ whatever widget things...
+   -> fixed # of widgets, not encoded in a behaviour
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Other notable implementations
+-- Elm (mini-Haskell + single-threaded sodium)
+-- Rx, RxJava, RxJS
+-- BaconJS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Topics for Discussion
+- Has anyone worked with any FRP libs before, what was your impression?
+- What are the benfits and drawbacks of FRP?
+  -- BENEFIT: more modular code
+  -- BENEFIT: "automatic" parallelism
+  -- DRAWBACK: harder to debug and reason about timing of events
+  -- DRAWBACK: performance cost to managing streams of events,
+               not suitable for realtime systems
+
+
+
+
+
+
+
+
+
+
+
+
+References
+-- Hui    https://github.com/awall/hui
+-- Fran   http://conal.net/fran/tutorial.htm
+-- Auto   http://blog.jle.im/entry/intro-to-machines-arrows-part-1-stream-and
+-- Yampa  https://wiki.haskell.org/Yampa
+-- sodium https://hackage.haskell.org/package/sodium
+          https://www.youtube.com/watch?v=gaG3tIb3Lbk
+-- Cuboid (game in Yampa) https://www.youtube.com/watch?v=-IpE0CyHK7Q
